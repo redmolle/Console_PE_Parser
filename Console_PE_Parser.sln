@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2041
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Console_PE_Parser", "Console_PE_Parser\Console_PE_Parser.csproj", "{4093019C-17CD-4C5B-A3B9-E6F7C6163E94}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4093019C-17CD-4C5B-A3B9-E6F7C6163E94}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4093019C-17CD-4C5B-A3B9-E6F7C6163E94}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4093019C-17CD-4C5B-A3B9-E6F7C6163E94}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4093019C-17CD-4C5B-A3B9-E6F7C6163E94}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8F6FF5A3-6DD0-41D1-96FB-C98BEDA03B7E}
+	EndGlobalSection
+EndGlobal

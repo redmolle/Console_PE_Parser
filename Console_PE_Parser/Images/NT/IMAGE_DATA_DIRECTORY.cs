@@ -16,10 +16,10 @@ namespace Console_PE_Parser.Images.NT
 
         public string Print()
         {
-            var tbl = new ConsoleTables.ConsoleTable("Наименование", "Значение");
+            var tbl = new ConsoleTables.ConsoleTable("Наименование", "Dec", "Hex", "ASCII");
             tbl
-                .AddRow("VirtualAddress", VirtualAddress)
-                .AddRow("Size", Size);
+                .AddRow(Parser.GetDecHexAscii("VirtualAddress", VirtualAddress))
+                .AddRow(Parser.GetDecHexAscii("Size", Size));
 
             return "IMAGE_DATA_DIRECTORY {i}\n" + tbl.ToString();
         }

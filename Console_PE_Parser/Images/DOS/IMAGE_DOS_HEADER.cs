@@ -68,32 +68,32 @@ namespace Console_PE_Parser.Images.DOS
 
         public string Print()
         {
-            var tbl = new ConsoleTables.ConsoleTable("Наименование", "Значение");
-            tbl.AddRow("e_magic", e_magic)
-               .AddRow("e_cblp", e_cblp)
-               .AddRow("e_cp", e_cp)
-               .AddRow("e_crlc", e_crlc)
-               .AddRow("e_cparhdr", e_cparhdr)
-               .AddRow("e_minalloc", e_minalloc)
-               .AddRow("e_maxalloc", e_maxalloc)
-               .AddRow("e_ss", e_ss)
-               .AddRow("e_sp", e_sp)
-               .AddRow("e_csum", e_csum)
-               .AddRow("e_ip", e_ip)
-               .AddRow("e_cs", e_cs)
-               .AddRow("e_lfarlc", e_lfarlc)
-               .AddRow("e_ovno", e_ovno);
+            var tbl = new ConsoleTables.ConsoleTable("Наименование", "Dec", "Hex", "ASCII");
+            tbl.AddRow(Parser.GetDecHexAscii("e_magic", e_magic))
+               .AddRow(Parser.GetDecHexAscii("e_cblp", e_cblp))
+               .AddRow(Parser.GetDecHexAscii("e_cp", e_cp))
+               .AddRow(Parser.GetDecHexAscii("e_crlc", e_crlc))
+               .AddRow(Parser.GetDecHexAscii("e_cparhdr", e_cparhdr))
+               .AddRow(Parser.GetDecHexAscii("e_minalloc", e_minalloc))
+               .AddRow(Parser.GetDecHexAscii("e_maxalloc", e_maxalloc))
+               .AddRow(Parser.GetDecHexAscii("e_ss", e_ss))
+               .AddRow(Parser.GetDecHexAscii("e_sp", e_sp))
+               .AddRow(Parser.GetDecHexAscii("e_csum", e_csum))
+               .AddRow(Parser.GetDecHexAscii("e_ip", e_ip))
+               .AddRow(Parser.GetDecHexAscii("e_cs", e_cs))
+               .AddRow(Parser.GetDecHexAscii("e_lfarlc", e_lfarlc))
+               .AddRow(Parser.GetDecHexAscii("e_ovno", e_ovno));
 
             for (int i = 0; i < e_res.Length; i++)
-                tbl.AddRow($"e_res[{i}]", e_res[i]);
+                tbl.AddRow(Parser.GetDecHexAscii($"e_res[{i}]", e_res[i]));
 
-            tbl.AddRow("e_oemid", e_ovno)
-               .AddRow("e_oemidinfo", e_ovno);
+            tbl.AddRow(Parser.GetDecHexAscii("e_oemid", e_ovno))
+               .AddRow(Parser.GetDecHexAscii("e_oemidinfo", e_ovno));
 
             for (int i = 0; i < e_res2.Length; i++)
-                tbl.AddRow($"e_res2[{i}]", e_res2[i]);
+                tbl.AddRow(Parser.GetDecHexAscii($"e_res2[{i}]", e_res2[i]));
 
-               tbl.AddRow("e_lfanew", e_lfanew);
+               tbl.AddRow(Parser.GetDecHexAscii("e_lfanew", e_lfanew));
 
             return "IMAGE_DOS_HEADER\n" + tbl.ToString();
         }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Text;
+using System.Collections.Generic;
 
 namespace Console_PE_Parser.Images.Import
 {
@@ -27,15 +28,15 @@ namespace Console_PE_Parser.Images.Import
 
         public string Print()
         {
-            var tbl = new ConsoleTables.ConsoleTable("Наименование", "Значение");
+            string[] s = Parser.GetDecHexAscii("Name", Name);
+            var tbl = new ConsoleTables.ConsoleTable("Наименование", "Dec", "Hex", "ASCII");
             tbl
-                .AddRow("Characteristics", Characteristics)
-                .AddRow("OriginalFirstThunk", OriginalFirstThunk)
-                .AddRow("TimaDateStamp", TimaDateStamp)
-                .AddRow("ForwardChain", ForwardChain)
-                .AddRow("Name", Name)
-                .AddRow("String_Name", String_Name)
-                .AddRow("FirstThunk", FirstThunk);
+                .AddRow(Parser.GetDecHexAscii("Characteristics", Characteristics))
+                .AddRow(Parser.GetDecHexAscii("OriginalFirstThunk", OriginalFirstThunk))
+                .AddRow(Parser.GetDecHexAscii("TimaDateStamp", TimaDateStamp))
+                .AddRow(Parser.GetDecHexAscii("ForwardChain", ForwardChain))
+                .AddRow(new string[4] { s[0], s[1], s[2], String_Name})
+                .AddRow(Parser.GetDecHexAscii("FirstThunk", FirstThunk));
 
             return "IMAGE_IMPORT_DESCRIPTOR [{i}]\n" + tbl.ToString();
         }

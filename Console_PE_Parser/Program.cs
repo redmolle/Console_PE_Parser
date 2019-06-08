@@ -9,7 +9,7 @@ namespace ConsoleApplication3
 {
     class Program
     {
-        static string UseDefaultFilePath { get { return @"C:\Users\redmo\Documents\Study\Uni\8\Компьютерная криминалистика\Import\pe-tut06\pe-tut06.exe"; } }
+        static string UseDefaultFilePath { get { return @"C:\Users\redmo\Documents\Study\Uni\8\Компьютерная криминалистика\PE\Detect Import\pe-tut06.exe"; } }
 
         static string ChooseCmd()
         {

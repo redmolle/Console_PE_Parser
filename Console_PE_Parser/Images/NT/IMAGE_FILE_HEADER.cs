@@ -26,15 +26,15 @@ namespace Console_PE_Parser.Images.NT
 
         public string Print()
         {
-            var tbl = new ConsoleTables.ConsoleTable("Наименование", "Значение");
+            var tbl = new ConsoleTables.ConsoleTable("Наименование", "Dec", "Hex", "ASCII");
             tbl
-                .AddRow("Machine", Machine)
-                .AddRow("NumberOfSections", NumberOfSections)
-                .AddRow("TimeDateStamp", TimeDateStamp)
-                .AddRow("PointerToSymbolTable", PointerToSymbolTable)
-                .AddRow("NumberOfSymbols", NumberOfSymbols)
-                .AddRow("SizeOfOptionalHeader", SizeOfOptionalHeader)
-                .AddRow("Characteristics", Characteristics);
+                .AddRow(Parser.GetDecHexAscii("Machine", Machine))
+                .AddRow(Parser.GetDecHexAscii("NumberOfSections", NumberOfSections))
+                .AddRow(Parser.GetDecHexAscii("TimeDateStamp", TimeDateStamp))
+                .AddRow(Parser.GetDecHexAscii("PointerToSymbolTable", PointerToSymbolTable))
+                .AddRow(Parser.GetDecHexAscii("NumberOfSymbols", NumberOfSymbols))
+                .AddRow(Parser.GetDecHexAscii("SizeOfOptionalHeader", SizeOfOptionalHeader))
+                .AddRow(Parser.GetDecHexAscii("Characteristics", Characteristics));
 
             return "IMAGE_FILE_HEADER\n" + tbl.ToString();
         }

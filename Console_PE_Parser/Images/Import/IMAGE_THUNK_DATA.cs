@@ -18,23 +18,23 @@ namespace Console_PE_Parser.Images.Import
             AddressOfData = BitConverter.ToUInt32(bytes, 0);
         }
 
-        public string ToString(string tab = null)
-        {
-            tab = tab ?? string.Empty;
-            StringBuilder sb = new StringBuilder();
+        //public string ToString(string tab = null)
+        //{
+        //    tab = tab ?? string.Empty;
+        //    StringBuilder sb = new StringBuilder();
             
-            sb.AppendLine();
-            sb.AppendLine($"{tab}---   IMAGE_THUNK_DATA   ---");
-            sb.AppendLine();
-            sb.AppendFormat("{0}{1,-20} : {2,-20}\n", tab, "ForwardString", ForwardString);
-            sb.AppendFormat("{0}{1,-20} : {2,-20}\n", tab, "Function", Function);
-            sb.AppendFormat("{0}{1,-20} : {2,-20}\n", tab, "Ordinal", Ordinal);
-            sb.AppendFormat("{0}{1,-20} : {2,-20}\n", tab, "AddressOfData", AddressOfData);
-            sb.AppendLine();
-            sb.AppendLine($"{tab}---   IMAGE_THUNK_DATA   ---");
-            sb.AppendLine();
+        //    sb.AppendLine();
+        //    sb.AppendLine($"{tab}---   IMAGE_THUNK_DATA   ---");
+        //    sb.AppendLine();
+        //    sb.AppendFormat("{0}{1,-20} : {2,-20}\n", tab, "ForwardString", ForwardString);
+        //    sb.AppendFormat("{0}{1,-20} : {2,-20}\n", tab, "Function", Function);
+        //    sb.AppendFormat("{0}{1,-20} : {2,-20}\n", tab, "Ordinal", Ordinal);
+        //    sb.AppendFormat("{0}{1,-20} : {2,-20}\n", tab, "AddressOfData", AddressOfData);
+        //    sb.AppendLine();
+        //    sb.AppendLine($"{tab}---   IMAGE_THUNK_DATA   ---");
+        //    sb.AppendLine();
 
-            return sb.ToString();
-        }
+        //    return sb.ToString();
+        //}
     }
 }

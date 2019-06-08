@@ -20,9 +20,9 @@ namespace Console_PE_Parser.Images.NT
 
         public string Print()
         {
-            var tbl = new ConsoleTables.ConsoleTable("Наименование", "Значение");
+            var tbl = new ConsoleTables.ConsoleTable("Наименование", "Dec", "Hex", "ASCII");
             tbl
-                .AddRow("Signature", Signature);
+                .AddRow(Parser.GetDecHexAscii("Signature", Signature));
             return "IMAGE_NT_HEADER\n" + tbl.ToString() + "\n" + FileHeader.Print() + "\n" + OptionalHeader.Print();
         }
 

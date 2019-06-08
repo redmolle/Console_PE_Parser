@@ -15,10 +15,10 @@ namespace Console_PE_Parser.Images.Sections
 
         public string Print()
         {
-            var tbl = new ConsoleTables.ConsoleTable("Наименование", "Значение");
+            var tbl = new ConsoleTables.ConsoleTable("Наименование", "Dec", "Hex", "ASCII");
             tbl
-                .AddRow("PhysicalAddress", PhysicalAddress)
-                .AddRow("VirtualSize", VirtualSize);
+                .AddRow(Parser.GetDecHexAscii("PhysicalAddress", PhysicalAddress))
+                .AddRow(Parser.GetDecHexAscii("VirtualSize", VirtualSize));
 
             return "IMAGE_MISC\n" + tbl.ToString();
         }

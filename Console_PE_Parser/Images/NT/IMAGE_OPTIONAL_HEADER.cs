@@ -80,38 +80,38 @@ namespace Console_PE_Parser.Images.NT
 
         public string Print()
         {
-            var tbl = new ConsoleTables.ConsoleTable("Наименование", "Значение");
+            var tbl = new ConsoleTables.ConsoleTable("Наименование", "Dec", "Hex", "ASCII");
             tbl
-                .AddRow("Magic", Magic)
-                .AddRow("MajorLinkerVersion", MajorLinkerVersion)
-                .AddRow("MinorLinkerVersion", MinorLinkerVersion)
-                .AddRow("SizeOfCode", SizeOfCode)
-                .AddRow("SizeOfInitializedData", SizeOfInitializedData)
-                .AddRow("SizeOfUninitializedData", SizeOfUninitializedData)
-                .AddRow("AddressOfEntryPoint", AddressOfEntryPoint)
-                .AddRow("BaseOfCode", BaseOfCode)
-                .AddRow("BaseOfData", BaseOfData)
-                .AddRow("ImageBase", ImageBase)
-                .AddRow("SectionAlignment", SectionAlignment)
-                .AddRow("FileAlignment", FileAlignment)
-                .AddRow("MajorOperatingSystemVersion", MajorOperatingSystemVersion)
-                .AddRow("MinorOperatingSystemVersion", MinorOperatingSystemVersion)
-                .AddRow("MajorImageVersion", MajorImageVersion)
-                .AddRow("MinorImageVersion", MinorImageVersion)
-                .AddRow("MajorSubsystemVersion", MajorSubsystemVersion)
-                .AddRow("MinorSubsystemVersion", MinorSubsystemVersion)
-                .AddRow("Win32VersionValue", Win32VersionValue)
-                .AddRow("SizeOfImage", SizeOfImage)
-                .AddRow("SizeOfHeaders", SizeOfHeaders)
-                .AddRow("CheckSum", CheckSum)
-                .AddRow("Subsystem", Subsystem)
-                .AddRow("DllCharacteristics", DllCharacteristics)
-                .AddRow("SizeOfStackReserve", SizeOfStackReserve)
-                .AddRow("SizeOfStackCommit", SizeOfStackCommit)
-                .AddRow("SizeOfHeapReserve", SizeOfHeapReserve)
-                .AddRow("SizeOfHeapCommit", SizeOfHeapCommit)
-                .AddRow("LoaderFlags", LoaderFlags)
-                .AddRow("NumberOfRvaAndSizes", NumberOfRvaAndSizes);
+                .AddRow(Parser.GetDecHexAscii("Magic", Magic));
+                tbl.AddRow(Parser.GetDecHexAscii("MajorLinkerVersion", MajorLinkerVersion));
+                tbl.AddRow(Parser.GetDecHexAscii("MinorLinkerVersion", MinorLinkerVersion));
+                tbl.AddRow(Parser.GetDecHexAscii("SizeOfCode", SizeOfCode));
+                tbl.AddRow(Parser.GetDecHexAscii("SizeOfInitializedData", SizeOfInitializedData));
+                tbl.AddRow(Parser.GetDecHexAscii("SizeOfUninitializedData", SizeOfUninitializedData));
+                tbl.AddRow(Parser.GetDecHexAscii("AddressOfEntryPoint", AddressOfEntryPoint));
+                tbl.AddRow(Parser.GetDecHexAscii("BaseOfCode", BaseOfCode));
+                tbl.AddRow(Parser.GetDecHexAscii("BaseOfData", BaseOfData));
+                tbl.AddRow(Parser.GetDecHexAscii("ImageBase", ImageBase));
+                tbl.AddRow(Parser.GetDecHexAscii("SectionAlignment", SectionAlignment));
+                tbl.AddRow(Parser.GetDecHexAscii("FileAlignment", FileAlignment));
+                tbl.AddRow(Parser.GetDecHexAscii("MajorOperatingSystemVersion", MajorOperatingSystemVersion));
+                tbl.AddRow(Parser.GetDecHexAscii("MinorOperatingSystemVersion", MinorOperatingSystemVersion));
+                tbl.AddRow(Parser.GetDecHexAscii("MajorImageVersion", MajorImageVersion));
+                tbl.AddRow(Parser.GetDecHexAscii("MinorImageVersion", MinorImageVersion));
+                tbl.AddRow(Parser.GetDecHexAscii("MajorSubsystemVersion", MajorSubsystemVersion));
+                tbl.AddRow(Parser.GetDecHexAscii("MinorSubsystemVersion", MinorSubsystemVersion));
+                tbl.AddRow(Parser.GetDecHexAscii("Win32VersionValue", Win32VersionValue));
+                tbl.AddRow(Parser.GetDecHexAscii("SizeOfImage", SizeOfImage));
+                tbl.AddRow(Parser.GetDecHexAscii("SizeOfHeaders", SizeOfHeaders));
+                tbl.AddRow(Parser.GetDecHexAscii("CheckSum", CheckSum));
+                tbl.AddRow(Parser.GetDecHexAscii("Subsystem", Subsystem));
+                tbl.AddRow(Parser.GetDecHexAscii("DllCharacteristics", DllCharacteristics));
+                tbl.AddRow(Parser.GetDecHexAscii("SizeOfStackReserve", SizeOfStackReserve));
+                tbl.AddRow(Parser.GetDecHexAscii("SizeOfStackCommit", SizeOfStackCommit));
+                tbl.AddRow(Parser.GetDecHexAscii("SizeOfHeapReserve", SizeOfHeapReserve));
+                tbl.AddRow(Parser.GetDecHexAscii("SizeOfHeapCommit", SizeOfHeapCommit));
+                tbl.AddRow(Parser.GetDecHexAscii("LoaderFlags", LoaderFlags));
+                tbl.AddRow(Parser.GetDecHexAscii("NumberOfRvaAndSizes", NumberOfRvaAndSizes));
 
             StringBuilder sb = new StringBuilder();
             for(int i = 0; i < DataDirectory.Length; i++)

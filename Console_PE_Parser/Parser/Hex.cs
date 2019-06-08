@@ -4,6 +4,7 @@ using System.Windows.Forms;
 using System.IO;
 using System.Text;
 using System.Linq;
+using System.Collections.Generic;
 
 public static partial class Parser
 {
@@ -61,11 +62,17 @@ public static partial class Parser
     }
     public static string[] GetDecHexAscii(string name, byte buf)
     {
-        return GetDecHexAscii(name, BitConverter.GetBytes(buf));
+        return GetDecHexAscii(name, new byte[] { buf });
     }
     public static string[] GetDecHexAscii(string name, byte[] buf)
     {
-        return GetDecHexAscii(name, BitConverter.ToUInt64(buf, 0));
+        return new string[4]
+        {
+            name,
+            buf.ToString(),
+            BitConverter.ToString(buf).Replace("-", ""),
+            GetStringFromBytes(buf)
+        };
     } 
     #endregion
 
